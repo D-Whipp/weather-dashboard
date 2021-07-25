@@ -11,21 +11,22 @@ body {
 }
 
 .search-box {
-    height: 50vh;
+    height: 100%;
     width: 25vw;
     margin: 10px;
 }
 
 .weather-report {
-    height: 20vh;
-    width: 65vw;
+    height: 100%;
+    width: 100%;
     margin: 10px;
+    padding-left: 7px;
     border: 2px solid black;
 }
 
 .forecast {
-    height: 20vh;
-    width: 65vw;
+    height: 100%;
+    width: 100%;
     margin: 10px;
 }
 
@@ -34,7 +35,7 @@ body {
 }
 
 .border-bot {
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid #000000;
 }
 
 .uv-index {
@@ -43,4 +44,13 @@ body {
     color: #fff;
     padding: 3px 3px 0 3px;
     width: 100px;
+}
+
+.card-custom {
+    height: 150px;
+    width: 150px;
+    background-color: #0066ff;
+    margin: 5px;
+    padding: 5px;
+    line-height: 0.7;
 }

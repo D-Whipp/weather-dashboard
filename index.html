@@ -20,7 +20,7 @@
   </head>
   <body>
     <!-- NAVBAR START -->
-    <nav>
+    <nav class="container">
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">Weather Dashboard</a>
       </div>
@@ -28,10 +28,10 @@
     <!-- NAVBAR END -->
 
     <!-- CONTAINER HOLDS ALL START -->
-    <div class="row">
+    <div class="row container">
       <!-- SEARCH BOX START -->
       <div class="col l3 search-box grey lighten-2 z-depth-3 search-box">
-          <h5>Search for a City:</h5>
+        <h5>Search for a City:</h5>
         <form class="border-bot">
           <div class="input-field center">
             <input id="search" type="search" required />
@@ -83,8 +83,83 @@
         <!-- WEATHER REPORT END -->
 
         <!-- 5 DAY FORECAST START -->
+        <h5>5-Day Forecast</h5>
         <div class="row l9 blue-grey white-text z-depth-3 forecast">
-          5 Day Forecast
+          <div class="col">
+            <div class="card-custom">
+              <h6><span class="date">3/31/2021</span></h6>
+              <p>
+                <span class="var-cloud"
+                  ><i class="material-icons">cloud_queue</i></span
+                >
+              </p>
+              <p class="temp">Temp: <span class="day-temp">71</span>&deg;F</p>
+              <p class="wind">Wind: <span class="wind-spd">4.3</span> MPH</p>
+              <p class="humidity">
+                Humidity: <span class="hum-perc">22%</span> &percnt;
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-custom">
+              <h6><span class="date">3/31/2021</span></h6>
+              <p>
+                <span class="var-cloud"
+                  ><i class="material-icons">cloud_queue</i></span
+                >
+              </p>
+              <p class="temp">Temp: <span class="day-temp">71</span>&deg;F</p>
+              <p class="wind">Wind: <span class="wind-spd">4.3</span> MPH</p>
+              <p class="humidity">
+                Humidity: <span class="hum-perc">22%</span> &percnt;
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-custom">
+              <h6><span class="date">3/31/2021</span></h6>
+              <p>
+                <span class="var-cloud"
+                  ><i class="material-icons">cloud_queue</i></span
+                >
+              </p>
+              <p class="temp">Temp: <span class="day-temp">71</span>&deg;F</p>
+              <p class="wind">Wind: <span class="wind-spd">4.3</span> MPH</p>
+              <p class="humidity">
+                Humidity: <span class="hum-perc">22%</span> &percnt;
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-custom">
+              <h6><span class="date">3/31/2021</span></h6>
+              <p>
+                <span class="var-cloud"
+                  ><i class="material-icons">cloud_queue</i></span
+                >
+              </p>
+              <p class="temp">Temp: <span class="day-temp">71</span>&deg;F</p>
+              <p class="wind">Wind: <span class="wind-spd">4.3</span> MPH</p>
+              <p class="humidity">
+                Humidity: <span class="hum-perc">22%</span> &percnt;
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-custom">
+              <h6><span class="date">3/31/2021</span></h6>
+              <p>
+                <span class="var-cloud"
+                  ><i class="material-icons">cloud_queue</i></span
+                >
+              </p>
+              <p class="temp">Temp: <span class="day-temp">71</span>&deg;F</p>
+              <p class="wind">Wind: <span class="wind-spd">4.3</span> MPH</p>
+              <p class="humidity">
+                Humidity: <span class="hum-perc">22%</span> &percnt;
+              </p>
+            </div>
+          </div>
         </div>
         <!-- 5 DAY FORECAST END -->
       </div>
