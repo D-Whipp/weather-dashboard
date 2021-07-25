@@ -14,13 +14,21 @@
 
 .weather-report {
     height: 20vh;
-    width: 70vw;
+    width: 65vw;
     margin: 10px;
     border: 2px solid black;
 }
 
 .forecast {
     height: 20vh;
-    width: 70vw;
+    width: 65vw;
     margin: 10px;
+}
+
+.m5 {
+    margin: 5px;
+}
+
+.border-bot {
+    border-bottom: 2px solid grey;
 }
