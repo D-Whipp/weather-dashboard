@@ -1,6 +1,3 @@
-// API CALL FOR CITY = "api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}";
-// ^^^ IMPORTANT ^^^
-
 var apiKey = "&appid=b27d174b72113aa4b9e36f1b858b0248";
 var apiURL =
   "https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&units=imperial&exclude=hourly,daily";
