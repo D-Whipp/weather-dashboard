@@ -1,56 +1,56 @@
 body {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 .nav-wrapper {
-    background: linear-gradient(to right, #0084ff, #470047);
+  background: linear-gradient(to right, #0084ff, #470047);
 }
 
 .float-right {
-    float: right;
+  float: right;
 }
 
 .search-box {
-    height: 100%;
-    width: 25vw;
-    margin: 10px;
+  height: 100%;
+  /* width: 20%; */
+  margin: 10px;
 }
 
 .weather-report {
-    height: 100%;
-    width: 100%;
-    margin: 10px;
-    padding-left: 7px;
-    border: 2px solid black;
+  height: 100%;
+  /* width: 75%; */
+  margin: 10px;
+  padding-left: 7px;
+  border: 2px solid black;
 }
 
 .forecast {
-    height: 100%;
-    width: 100%;
-    margin: 10px;
+  height: 100%;
+  /* width: 75%; */
+  margin: 10px;
 }
 
 .m5 {
-    margin: 5px;
+  margin: 5px;
 }
 
 .border-bot {
-    border-bottom: 2px solid #000000;
+  border-bottom: 2px solid #000000;
 }
 
 .uv-index {
-    background-color: green;
-    border-radius: 5px;
-    color: #fff;
-    padding: 3px 3px 0 3px;
-    width: 100px;
+  background-color: green;
+  border-radius: 5px;
+  color: #fff;
+  padding: 3px 3px 0 3px;
+  width: 100px;
 }
 
 .card-custom {
-    height: 150px;
-    width: 150px;
-    background-color: #0066ff;
-    margin: 5px;
-    padding: 5px;
-    line-height: 0.7;
+  height: 175px;
+  width: 175px;
+  background-color: #0066ff;
+  margin: 5px;
+  padding: 5px;
+  line-height: 0.7;
 }
