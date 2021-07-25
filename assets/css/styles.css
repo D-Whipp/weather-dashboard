@@ -1,3 +1,26 @@
 .nav-wrapper {
     background: linear-gradient(to right, #0084ff, #470047);
 }
+
+.float-right {
+    float: right;
+}
+
+.search-box {
+    height: 50vh;
+    width: 25vw;
+    margin: 10px;
+}
+
+.weather-report {
+    height: 20vh;
+    width: 70vw;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+.forecast {
+    height: 20vh;
+    width: 70vw;
+    margin: 10px;
+}
