@@ -11,7 +11,6 @@ var apiUnits = "&units=imperial";
 
 // Use moment.js to set current day START
 var now = moment().format("MMMM Do YYYY");
-
 // Use moment.js to set current day END
 
 // weather report variables START
@@ -57,10 +56,37 @@ var dayFiveWindEl = document.querySelector(".day-five-wind");
 var dayFiveHumEl = document.querySelector(".day-five-hum");
 // fifth day END
 
+// search history list START
+var searchHistoryEl = document.querySelector(".search-history");
+// search history list END
+
 // Query Selectors START
 var userFormEl = document.querySelector("#user-form");
 var searchInputEl = document.querySelector("#search-item");
 // Query Selectors END
+
+// load list logic START
+
+// load list logic END
+
+// save list logic START
+function save() {
+  // get data from input box
+  var newData = userFormEl;
+
+  // if there's nothing in localStorage then save empty array
+  if (localStorage.getItem("data") == null) {
+    localStorage.setItem("data", "[]");
+  }
+
+  // get old data and add it to new data
+  var oldData = JSON.parse(localStorage.getItem("data"));
+  oldData.push(newData);
+
+  // save the old and new data to localStorage
+  localStorage.setItem("data", JSON.stringify(old_data));
+}
+// save list logic END
 
 // Logic for Weather Report START
 var getWeatherData = function (searchTerm) {
@@ -78,9 +104,7 @@ var getWeatherData = function (searchTerm) {
         windSpeedEl.innerHTML = data["wind"]["speed"];
         humidityEl.innerHTML = data["main"]["humidity"];
       });
-    } else {
-      alert("You need to enter in a city found in the USA!");
-    }
+    } 
   });
 };
 // Logic for Weather Report END
@@ -89,15 +113,12 @@ var getWeatherData = function (searchTerm) {
 var setFiveDayForecast = function (searchTerm) {
   // format the weather api url
   var fiveDayUrl = fiveDayForecast + searchTerm + apiUnits + apiKey;
-  console.log(fiveDayForecast);
 
   // make request to the url
   fetch(fiveDayUrl).then(function (response) {
     // if request was successful
     if (response.ok) {
       response.json().then(function (data) {
-        console.log(data);
-
         // set day one data START
         dayOneDateEl.innerHTML = moment().add(1, "days").format("MMMM Do YYYY");
         dayOneTempEl.innerHTML = data["list"]["0"]["main"]["temp"];
@@ -131,12 +152,13 @@ var setFiveDayForecast = function (searchTerm) {
         // set day four data END
 
         // set day five data START
-        dayFiveDateEl.innerHTML = moment().add(5, "days").format("MMMM Do YYYY");
+        dayFiveDateEl.innerHTML = moment()
+          .add(5, "days")
+          .format("MMMM Do YYYY");
         dayFiveTempEl.innerHTML = data["list"]["4"]["main"]["temp"];
         dayFiveWindEl.innerHTML = data["list"]["4"]["wind"]["speed"];
         dayFiveHumEl.innerHTML = data["list"]["4"]["main"]["humidity"];
         // set day five data END
-
       });
     } else {
       console.log(response);
@@ -144,6 +166,21 @@ var setFiveDayForecast = function (searchTerm) {
   });
 };
 // Logic for 5 Day Forecast END
+
+// make list logic START
+var createList = function (searchTerm) {
+  // create elements that make up a task item
+  cityLi = document.createElement("li");
+  cityLi.innerText = searchTerm;
+  cityLi.className += "btn";
+  cityLi.className += " waves-effect";
+  cityLi.className += " waves-light";
+
+  // add the created li to list
+  searchHistoryEl.append(cityLi);
+  saveToLocalStorage();
+};
+// make list logic END
 
 var formSubmitHandler = function (event) {
   event.preventDefault();
@@ -154,6 +191,7 @@ var formSubmitHandler = function (event) {
   if (searchTerm) {
     getWeatherData(searchTerm);
     setFiveDayForecast(searchTerm);
+    createList(searchTerm);
     searchInputEl.value = "";
   }
 };
