@@ -4,14 +4,18 @@ var searchByCity = "https://api.openweathermap.org/data/2.5/weather?q=";
 var apiUnits = "&units=imperial";
 var now = moment().format("MMMM Do YYYY");
 
-// weather report variables
+// weather report variables START
 var cityNameEl = document.querySelector(".city-name");
 var todayEl = document.querySelector(".today");
-console.log(now);
+var setTempEl = document.querySelector(".set-temp");
+var windSpeedEl = document.querySelector(".wind-speed");
+var humidityEl = document.querySelector(".hum-perc");
+// weather report variables END
 
-// Query Selectors
+// Query Selectors START
 var userFormEl = document.querySelector("#user-form");
 var searchInputEl = document.querySelector("#search-item");
+// Query Selectors END
 
 var getWeatherData = function (searchTerm) {
   // format the weather api url
@@ -22,11 +26,15 @@ var getWeatherData = function (searchTerm) {
     // request was successful
     if (response.ok) {
       response.json().then(function (data) {
+        console.log(data);
         cityNameEl.innerHTML = searchTerm;
         todayEl.innerHTML = now;
+        setTempEl.innerHTML = data["main"]["temp"];
+        windSpeedEl.innerHTML = data['wind']['speed'];
+        humidityEl.innerHTML = data['main']['humidity'];
       });
     } else {
-      alert("You need to enter in a city found in the USA!")
+      alert("You need to enter in a city found in the USA!");
     }
   });
 };
